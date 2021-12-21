@@ -1,4 +1,4 @@
-const ncp = require("copy-paste");
+const { copy } = require("copy-paste");
 
 const { client } = require("./client");
 
@@ -16,6 +16,6 @@ const { client } = require("./client");
     .filter((asset) => asset.amount >= 1)
     .map((asset) => asset["asset-id"]);
 
-  ncp.copy(assetIds.join(","));
+  copy(assetIds.join(","));
   console.log(`Copied ${assetIds.length} Asset IDs to the clipboard`);
 })();
