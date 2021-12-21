@@ -2,7 +2,7 @@
 
 This repository provides helpful scripts for Algo NFT creators.
 
-These scripts come with no warranty whatsoever, so please use them responsibly. Run things on the testnet first, until you're comfortable with the scripts.
+These scripts come with no warranty whatsoever, so please use them responsibly.
 
 @algokittens' [algoNFTs repository](https://github.com/algokittens/algoNFTs) inspired this one, so definitely check it out, especially if you prefer Python over Nodejs!
 
