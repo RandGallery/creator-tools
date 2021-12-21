@@ -12,7 +12,7 @@ Also, please read up on Algorand Standard Assets (ASAs), so you can understand t
 
 `node add.js --to SOMEADDRESS --assetIds 123,456`
 
-This script adds NFTs to an account.
+This script adds NFTs to an account. This allows the account to receive the NFTs from another account later.
 
 ## Send NFTs
 
