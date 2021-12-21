@@ -1,0 +1,9 @@
+{
+  "name": "creator-tools",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "algosdk": "^1.12.0",
+    "minimist": "^1.2.5"
+  }
+}
