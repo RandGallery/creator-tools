@@ -20,6 +20,12 @@ This script adds NFTs to an account. This allows the account to receive the NFTs
 
 This script sends NFTs from one account to another.
 
+## List NFTs
+
+`node list.js --from SOMEADDRESS`
+
+This script gets a list of available Asset IDs from account, then copies the list to the clipboard.
+
 ## Collect Garbage
 
 `node collect-garbage.js --from SOMEADDRESS`

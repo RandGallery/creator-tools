@@ -1,7 +1,2 @@
-forges/
-holders/
 node_modules/
 passphrases.json
-secrets.json
-tmp/
-tmp.txt
