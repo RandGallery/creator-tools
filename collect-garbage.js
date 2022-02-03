@@ -46,7 +46,7 @@ const { client } = require("./client");
 
       amount: 0,
 
-      closeRemainderTo: asset.creator,
+      closeRemainderTo: from,
     });
 
     // Sign the transaction
