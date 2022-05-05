@@ -16,3 +16,9 @@ exports.accounts = passphrases.reduce((accounts, passphrase) => {
   accounts[account.addr] = account;
   return accounts;
 }, {});
+
+// List addresses, when executed directly.
+if (require.main === module) {
+  const addresses = Object.keys(this.accounts);
+  console.log(addresses.join("\n"));
+}
