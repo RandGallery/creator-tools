@@ -27,7 +27,7 @@ const { client } = require("./client");
   // Get suggested parameters.
   const suggestedParams = await client.getTransactionParams().do();
 
-  // Remove ASAs.
+  // Close out account.
   const txn = algosdk.makePaymentTxnWithSuggestedParamsFromObject({
     suggestedParams,
 
