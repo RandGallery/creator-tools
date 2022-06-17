@@ -34,9 +34,8 @@ const { client } = require("./client");
   const suggestedParams = await client.getTransactionParams().do();
 
   // Remove ASAs.
-  for (const asset of assetsToRemove) {
-    // Create transaction.
-    const txn = algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject({
+  const txns = assetsToRemove.map((asset) =>
+    algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject({
       suggestedParams,
 
       assetIndex: asset.assetId,
@@ -47,14 +46,18 @@ const { client } = require("./client");
       amount: 0,
 
       closeRemainderTo: from,
+    })
+  );
+  for (let i = 0; i < txns.length; i += 16) {
+    const group = txns.slice(i, i + 16);
+    const groupId = algosdk.computeGroupID(group);
+    const blobs = group.map((txn) => {
+      txn.group = groupId;
+      return txn.signTxn(fromAccount.sk);
     });
 
-    // Sign the transaction
-    const signedTxn = txn.signTxn(fromAccount.sk);
-
     // Send transaction!
-    console.log(`Remove ${asset.assetId} from ${from}`);
-    const result = await client.sendRawTransaction(signedTxn).do();
-    console.log(result);
+    const result = await client.sendRawTransaction(blobs).do();
+    console.log(`Cleaned up ${i + blobs.length} of ${txns.length} opt-ins.`);
   }
 })();
