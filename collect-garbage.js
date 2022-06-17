@@ -57,7 +57,7 @@ const { client } = require("./client");
     });
 
     // Send transaction!
-    const result = await client.sendRawTransaction(blobs).do();
+    await client.sendRawTransaction(blobs).do();
     console.log(`Cleaned up ${i + blobs.length} of ${txns.length} opt-ins.`);
   }
 })();
