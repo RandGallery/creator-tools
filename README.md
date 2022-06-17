@@ -31,3 +31,9 @@ This script gets a list of available Asset IDs from account, then copies the lis
 `node collect-garbage.js --from SOMEADDRESS`
 
 This script opts an account out of NFTs it holds none of.
+
+## Close Out Account
+
+`node collect-garbage.js --from SOMEADDRESS --to SOMEOTHERADDRESS`
+
+This script closes out an account.
